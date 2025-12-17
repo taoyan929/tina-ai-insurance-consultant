@@ -1,0 +1,147 @@
+/* General layout */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;   /* 修复默认白色背景 */
+}
+
+/* === Outer Layout: Center Everything === */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* === Main White Card === */
+.chat-card {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  border: 2px solid #007aff; 
+}
+.chat-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Chat Window */
+.chat-window {
+  height: 480px;
+  background: #f7f7f8;
+  border-radius: 15px;
+  padding: 15px;
+  overflow-y: auto;
+  border: 1px solid #e3e3e3;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.tina {
+  justify-content: flex-start;
+}
+
+.bubble {
+  padding: 12px 14px;
+  border-radius: 16px;
+  max-width: 70%;
+  font-size: 15px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.message.user .bubble {
+  background: #007aff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.tina .bubble {
+  background: white;
+  border: 1px solid #ddd;
+  color: #222;
+  border-bottom-left-radius: 4px;
+}
+
+/* Typing indicator */
+.typing {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #aaa;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  40% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.input-box {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  font-size: 15px;
+}
+
+.send-btn {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: #0066d6;
+}

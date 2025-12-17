@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: tina-backend-container
+    ports:
+      - "4000:4000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    networks:
+      - tina-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: tina-frontend-container
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - tina-network
+    restart: unless-stopped
+
+networks:
+  tina-network:
+    driver: bridge
